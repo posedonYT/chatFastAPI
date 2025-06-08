@@ -1,0 +1,28 @@
+[project]
+name = "rokoofastapi"
+version = "0.1.0"
+description = "Rokoo FastApi backend"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "fastapi>=0.115.12",
+    "greenlet>=3.2.2",
+    "pydantic>=2.11.5",
+    "python-dotenv>=1.1.0",
+    "ruff>=0.11.12",
+    "sqlalchemy>=2.0.41",
+    "uvicorn>=0.34.3",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+select = ["E", "F", "I", "B"]  # ошибки, форматирование, isort, bugbear
+
+[tool.ruff.lint]
+extend-select = ["C90"]
+ignore = ["E501"]  # игнор длинных строк, например
+
+[tool.ruff.format]
+quote-style = "single"
